@@ -1,20 +1,14 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-
 import java.awt.Font;
-
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
