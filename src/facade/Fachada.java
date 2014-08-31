@@ -65,4 +65,9 @@ public class Fachada {
 	}
 
 	// ---------------------------------------------------------------------
+	public Caixa buscarPorCaixa(String chave) throws SQLException {
+		return this.caixa.buscarPorCaixa(chave);
+	}
+
+	// ---------------------------------------------------------------------
 }

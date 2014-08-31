@@ -105,14 +105,6 @@ public class ChamarCliente extends JDialog {
 		contentPane.add(btnChamarCliente);
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent arg0) {
-				
-				String itemSelecionado = (String) comboBox.getSelectedItem();
-				System.out.println(itemSelecionado);
-				
-			}
-		});
 		comboBox.setBounds(6, 5, 133, 30);
 		comboBox.setVisible(false);
 		contentPane.add(comboBox);
@@ -138,6 +130,33 @@ public class ChamarCliente extends JDialog {
 		label.setBounds(-200, -138, 611, 337);
 		contentPane.add(label);
 		
+		
+		comboBox.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				
+				String itemSelecionado = (String) comboBox.getSelectedItem();
+				System.out.println(itemSelecionado);
+				
+				// Gravar no TXT
+				//----------------------------------------------------------------------
+				String numeroCaixa = comboBox.getSelectedItem().toString();
+				
+				
+				Caixa caixa = new Caixa();
+				try {
+					caixa = (Caixa) fachada.buscarPorCaixa(numeroCaixa);
+					
+					File.gravar(String.valueOf(caixa.getId()));
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				//---------------------------------------------------------------------
+				
+				
+				
+				
+			}
+		});
 		
 		
 		// informacoes dos caixas

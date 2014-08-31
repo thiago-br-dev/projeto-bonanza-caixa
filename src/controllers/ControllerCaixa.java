@@ -32,5 +32,9 @@ public class ControllerCaixa {
 	}
 
 	// -------------------------------------------------------------------
+	public Caixa buscarPorCaixa(String chave) throws SQLException {
+		return caixaRepositorio.buscarPorCaixa(chave);
+	}
 
+	// -------------------------------------------------------------------
 }
