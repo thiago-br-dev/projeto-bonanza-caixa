@@ -32,7 +32,7 @@ public class ControllerChamada {
 
 		String dataSistema = new SimpleDateFormat("dd/MM/yyyy")
 				.format(new Date());
-		String horaSistema = new SimpleDateFormat("HH:mm").format(new Date());
+		String horaSistema = new SimpleDateFormat("HH:mm:ss").format(new Date());
 
 		chamada.setData(dataSistema);
 		chamada.setHora(horaSistema);

@@ -5,6 +5,7 @@ public class Chamada {
 	private int id;
 	private String data;
 	private String hora;
+	private String espera;
 	private int caixaId;
 	
 	public int getId() {
@@ -30,6 +31,12 @@ public class Chamada {
 	}
 	public void setCaixaId(int caixaId) {
 		this.caixaId = caixaId;
+	}
+	public String getEspera() {
+		return espera;
+	}
+	public void setEspera(String espera) {
+		this.espera = espera;
 	}
 	
 	
