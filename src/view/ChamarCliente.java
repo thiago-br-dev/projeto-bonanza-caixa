@@ -78,7 +78,16 @@ public class ChamarCliente extends JFrame {
 		btnChamarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				
+				//--------------------------------------------------------
+				//solicitar chamado
+				Chamada chamada = new Chamada();
+				chamada.setCaixaId(File.ler());
+				System.out.println(File.ler());
+				try {
+					fachada.inserirChamada(chamada);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 				
 			}
 		});
@@ -123,10 +132,7 @@ public class ChamarCliente extends JFrame {
 			e.printStackTrace();
 		}
 		
-		//--------------------------------------------------------
-		//solicitar chamado
-		Chamada chamada = new Chamada();
-		chamada.setId(File.ler());
+
 		
 		
 

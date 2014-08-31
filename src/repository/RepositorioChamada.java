@@ -22,8 +22,8 @@ public class RepositorioChamada implements IRepositorioChamada {
 					.prepareStatement(sql);
 
 			stm1.setInt(1, 0);
-			stm1.setString(2, chamada.getHora());
-			stm1.setString(3, chamada.getData());
+			stm1.setString(2, chamada.getData());
+			stm1.setString(3, chamada.getHora());
 			stm1.setInt(4, chamada.getCaixaId());
 			stm1.execute();
 			stm1.close();
