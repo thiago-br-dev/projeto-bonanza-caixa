@@ -23,6 +23,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ChamarCliente extends JFrame {
 
@@ -73,6 +75,13 @@ public class ChamarCliente extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnChamarCliente = new JButton("Chamar Cliente");
+		btnChamarCliente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				
+			}
+		});
 		btnChamarCliente.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnChamarCliente.setBounds(10, 52, 135, 50);
 		contentPane.add(btnChamarCliente);
