@@ -1,7 +1,9 @@
 package view;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -26,7 +28,13 @@ import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ChamarCliente extends JFrame {
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+
+public class ChamarCliente extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -63,12 +71,13 @@ public class ChamarCliente extends JFrame {
 	}
 
 	public ChamarCliente() {
+		setTitle("Bonanza Supermercados");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ChamarCliente.class.getResource("/view/img/icon_screen.png")));
 		setResizable(false);
 		
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		setBounds(100, 100, 161, 147);
+		setBounds(100, 100, 150, 126);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -92,15 +101,24 @@ public class ChamarCliente extends JFrame {
 			}
 		});
 		btnChamarCliente.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnChamarCliente.setBounds(10, 52, 135, 50);
+		btnChamarCliente.setBounds(5, 42, 135, 50);
 		contentPane.add(btnChamarCliente);
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setBounds(10, 11, 133, 30);
+		comboBox.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				
+				String itemSelecionado = (String) comboBox.getSelectedItem();
+				System.out.println(itemSelecionado);
+				
+			}
+		});
+		comboBox.setBounds(6, 5, 133, 30);
 		comboBox.setVisible(false);
 		contentPane.add(comboBox);
 		
-		JLabel lblTrocarNmeroDo = new JLabel("Trocar N\u00FAmero do Caixa");
+		JLabel lblTrocarNmeroDo = new JLabel("Mudar Caixa");
+		lblTrocarNmeroDo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTrocarNmeroDo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -110,8 +128,15 @@ public class ChamarCliente extends JFrame {
 				
 			}
 		});
-		lblTrocarNmeroDo.setBounds(10, 19, 135, 14);
+		lblTrocarNmeroDo.setBounds(5, 13, 135, 14);
+		lblTrocarNmeroDo.setForeground(Color.DARK_GRAY);
+		lblTrocarNmeroDo.setFont(new Font("Cambria", Font.PLAIN, 15));
 		contentPane.add(lblTrocarNmeroDo);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(ChamarCliente.class.getResource("/view/img/cadastrar_caixa.jpg")));
+		label.setBounds(-200, -138, 611, 337);
+		contentPane.add(label);
 		
 		
 		
@@ -137,5 +162,4 @@ public class ChamarCliente extends JFrame {
 		
 
 	}
-
 }
