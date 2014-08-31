@@ -1,22 +1,36 @@
 package view;
 
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+
 import java.awt.Font;
+
 import javax.swing.JLabel;
+
+import util.File;
+import facade.Fachada;
+import models.Caixa;
+import models.Chamada;
+
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ChamarCliente extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	
+	private Fachada fachada;
+	private ArrayList<Caixa> caixasBD;
 
 	public static void main(String[] args) {
 		
@@ -83,6 +97,30 @@ public class ChamarCliente extends JFrame {
 		
 		
 		
+		// informacoes dos caixas
+		
+		fachada = Fachada.getInstance();
+		caixasBD = new ArrayList<Caixa>();
+		
+		try {
+			caixasBD = (ArrayList<Caixa>) fachada.listarCaixa();
+			
+			for (Caixa caixa : caixasBD) {
+				
+				comboBox.addItem(caixa.getCaixa());
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		//--------------------------------------------------------
+		//solicitar chamado
+		Chamada chamada = new Chamada();
+		chamada.setId(File.ler());
+		
+		
+
 	}
 
 }
