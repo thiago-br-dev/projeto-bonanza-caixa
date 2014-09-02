@@ -94,6 +94,27 @@ public class ChamarCliente extends JDialog {
 				System.out.println(File.ler());
 				try {
 					fachada.inserirChamada(chamada);
+					
+					Thread t = new Thread(){
+					    public void run(){
+					    	
+					    	int i = 0;
+					        while (i == 0){
+					            if(!btnChamarCliente.isEnabled()){
+					                btnChamarCliente.setEnabled(true);
+					                i++;
+					            } else {
+					                btnChamarCliente.setEnabled(false); //pode ser que o usuário apague o texto
+					            }
+					            
+					            try {
+					                sleep(3000); //meio segundo
+					            } catch (InterruptedException e) {}
+					         }
+					    }
+					};
+					t.start();
+					
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
