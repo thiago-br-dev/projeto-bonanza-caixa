@@ -13,12 +13,12 @@ public class ConnectionFactory {
 
 	public Connection getConnectionIntranet() {
 
-		String url = "jdbc:mysql://"+ipServidor+":3306/test?connectTimeout=500";
+		String url = "jdbc:mysql://"+ipServidor+":3306/teste?connectTimeout=500";
 
 		//String url = "jdbc:mysql://localhost:3306/teste";
 		try {
 			Class.forName(driver);
-			return (Connection) DriverManager.getConnection(url, "root", "");
+			return (Connection) DriverManager.getConnection(url, "TeckSoft", "root");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
