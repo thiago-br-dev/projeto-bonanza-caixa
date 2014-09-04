@@ -25,7 +25,7 @@ public class RepositorioChamada implements IRepositorioChamada {
 				ArrayList<Chamada> chamadasBD = new ArrayList<>();
 				Chamada chamada2;
 				String sql1 = "SELECT * FROM chamada WHERE caixa_id="
-						+ chamada.getCaixaId() + " ORDER BY id DESC LIMIT 1,1";
+						+ chamada.getCaixaId() + " ORDER BY id DESC LIMIT 1";
 
 				Connection con = new ConnectionFactory()
 						.getConnectionIntranet();
@@ -56,12 +56,15 @@ public class RepositorioChamada implements IRepositorioChamada {
 					System.out.println("id "+chamadasBD.get(0).getId()+" data "+chamadasBD.get(0).getHora());
 					horaEspera = CalculoTime.subtraiHora(chamada.getHora(),
 							chamadasBD.get(0).getHora());
+					chamada.setEspera(horaEspera);
 
 				} else {
 					horaEspera = "00:00:00";
+					chamada.setEspera(horaEspera);
 				}
 				
-				chamada.setEspera(horaEspera);
+				
+				
 
 			} catch (Exception e) {
 				e.printStackTrace();

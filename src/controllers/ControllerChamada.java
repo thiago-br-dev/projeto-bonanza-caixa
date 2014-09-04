@@ -30,7 +30,7 @@ public class ControllerChamada {
 	// -------------------------------------------------------------------
 	public boolean inserir(Chamada chamada) throws SQLException {
 
-		String dataSistema = new SimpleDateFormat("dd/MM/yyyy")
+		String dataSistema = new SimpleDateFormat("yyyy-MM-dd")
 				.format(new Date());
 		String horaSistema = new SimpleDateFormat("HH:mm:ss").format(new Date());
 

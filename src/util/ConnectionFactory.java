@@ -18,7 +18,7 @@ public class ConnectionFactory {
 		//String url = "jdbc:mysql://localhost:3306/teste";
 		try {
 			Class.forName(driver);
-			return (Connection) DriverManager.getConnection(url, "TeckSoft", "root");
+			return (Connection) DriverManager.getConnection(url, "root", "");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
