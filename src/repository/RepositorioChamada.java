@@ -59,7 +59,6 @@ public class RepositorioChamada implements IRepositorioChamada {
 					chamada.setEspera(horaEspera);
 
 				} else {
-					horaEspera = "00:00:00";
 					chamada.setEspera(horaEspera);
 				}
 				
