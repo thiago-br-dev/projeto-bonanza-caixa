@@ -83,7 +83,7 @@ public class ChamarCliente extends JDialog {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnChamarCliente = new JButton("Chamar Cliente");
+		final JButton btnChamarCliente = new JButton("Chamar Cliente");
 		btnChamarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -125,12 +125,12 @@ public class ChamarCliente extends JDialog {
 		btnChamarCliente.setBounds(5, 42, 135, 50);
 		contentPane.add(btnChamarCliente);
 		
-		JComboBox<String> comboBox = new JComboBox<String>();
+		final JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(6, 5, 133, 30);
 		comboBox.setVisible(false);
 		contentPane.add(comboBox);
 		
-		JLabel lblTrocarNmeroDo = new JLabel("Mudar Caixa");
+		final JLabel lblTrocarNmeroDo = new JLabel("Mudar Caixa");
 		lblTrocarNmeroDo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTrocarNmeroDo.addMouseListener(new MouseAdapter() {
 			@Override
