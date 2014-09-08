@@ -77,7 +77,7 @@ public class ChamarCliente extends JDialog {
 		
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		setBounds(100, 100, 150, 126);
+		setBounds(100, 100, 150, 115);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -122,7 +122,7 @@ public class ChamarCliente extends JDialog {
 			}
 		});
 		btnChamarCliente.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnChamarCliente.setBounds(5, 42, 135, 50);
+		btnChamarCliente.setBounds(5, 42, 135, 38);
 		contentPane.add(btnChamarCliente);
 		
 		final JComboBox<String> comboBox = new JComboBox<String>();

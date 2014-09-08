@@ -13,7 +13,7 @@ public class ConnectionFactory {
 
 	public Connection getConnectionIntranet() {
 
-		String url = "jdbc:mysql://"+ipServidor+":3306/teste?connectTimeout=500";
+		String url = "jdbc:mysql://"+ipServidor+":3306/projeto_bonanza?connectTimeout=500";
 
 		//String url = "jdbc:mysql://localhost:3306/teste";
 		try {
