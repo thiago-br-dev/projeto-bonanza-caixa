@@ -21,6 +21,7 @@ public class File {
 
 			// caso seja um diretório, é possível listar seus arquivos e
 			// diretórios
+			@SuppressWarnings("unused")
 			java.io.File[] arquivos = arquivo.listFiles();
 
 			// escreve no arquivo
